@@ -22,10 +22,13 @@ public class DevolverScript_Rat : MonoBehaviour {
             other.GetComponent<Player>().DevolveRat();
 
             var x = other.GetComponent<CapsuleCollider>();
-            x.height = 1.85f;
-            x.radius = 0.29f;
-            x.direction = 2;
-            x.center = new Vector3(0, 0.24f, 0);
+            //var characterController = GetComponent<CharacterController>();
+            //x.height = 1.85f;
+            //x.radius = 0.29f;
+            //x.direction = 2;
+            //x.center = new Vector3(0, 0.24f, 0);
+
+            //characterController.height = 0.1f;
 
         }
     }
