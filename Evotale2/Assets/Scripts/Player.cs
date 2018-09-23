@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
-    public GameObject LeOgre;
-
     public GameObject Ethan;
+    public GameObject LeOgre;
+    public GameObject Rat;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -22,5 +22,11 @@ public class Player : MonoBehaviour
     {
         this.Ethan.SetActive(false);
         this.LeOgre.SetActive(true);
+    }
+
+    public void DevolveRat()
+    {
+        this.LeOgre.SetActive(false);
+        this.Rat.SetActive(true);
     }
 }
