@@ -5,8 +5,14 @@ using Gaia.GXC.Opsive;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
 
-public class SecretRockScript : MonoBehaviour {
+public class SecretRockScript : MonoBehaviour
+{
 
+    public GameObject ConglaturationText;
+
+    public GameObject AwesomeEffect;
+
+    public GameObject EffectPos;
 	// Use this for initialization
 	void Start () {
 		
@@ -27,6 +33,8 @@ public class SecretRockScript : MonoBehaviour {
 
             var s = other.GetComponent<ThirdPersonCharacter>();
             s.m_JumpPower = 30f;
+            ConglaturationText.SetActive(true);
+            Instantiate(AwesomeEffect, EffectPos.transform.position, EffectPos.transform.rotation);
             //s.Move(new Vector3(20, 30, 50), false, true );
         }
     }
