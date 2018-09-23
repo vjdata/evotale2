@@ -24,7 +24,9 @@ public class DestroyRock : MonoBehaviour {
 
             if (ogre.activeSelf)
             {
-                Destroy(this.gameObject);
+                var s = GetComponent<AudioSource>();
+                s.Play();
+                Destroy(this.gameObject, 0.5f);
             }
         }
     }

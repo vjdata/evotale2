@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
@@ -15,18 +16,29 @@ public class Player : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+		var isJumping = CrossPlatformInputManager.GetButtonDown("Jump");
+	    if (isJumping)
+	    {
+	        var s = GetComponent<AudioSource>();
+            s.Play();
+	    }
+    }
 
     public void Devolve()
     {
-        this.Ethan.SetActive(false);
-        this.LeOgre.SetActive(true);
+        if (Ethan.activeSelf)
+        {
+            this.Ethan.SetActive(false);
+            this.LeOgre.SetActive(true);
+        }
     }
 
     public void DevolveRat()
     {
-        this.LeOgre.SetActive(false);
-        this.Rat.SetActive(true);
+        if (LeOgre.activeSelf)
+        {
+            this.LeOgre.SetActive(false);
+            this.Rat.SetActive(true);
+        }
     }
 }
